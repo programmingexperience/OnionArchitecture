@@ -97,6 +97,6 @@ D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Owin.Security.Goo
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Owin.Security.Twitter.xml
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\System.Web.Http.Owin.xml
-D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\obj\Debug\OA.WebAPI.csprojResolveAssemblyReference.cache
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\obj\Debug\OA.WebAPI.dll
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\obj\Debug\OA.WebAPI.pdb
+D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\obj\Debug\OA.WebAPI.csprojResolveAssemblyReference.cache
