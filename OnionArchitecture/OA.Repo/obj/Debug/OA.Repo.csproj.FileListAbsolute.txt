@@ -1,0 +1,4 @@
+D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\OA.Repo.dll
+D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\OA.Repo.pdb
+D:\OnionArchitecture\OnionArchitecture\OA.Repo\obj\Debug\OA.Repo.dll
+D:\OnionArchitecture\OnionArchitecture\OA.Repo\obj\Debug\OA.Repo.pdb

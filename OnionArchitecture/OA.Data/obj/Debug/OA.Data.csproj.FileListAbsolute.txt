@@ -1,0 +1,4 @@
+D:\OnionArchitecture\OnionArchitecture\OA.Data\bin\Debug\OA.Data.dll
+D:\OnionArchitecture\OnionArchitecture\OA.Data\bin\Debug\OA.Data.pdb
+D:\OnionArchitecture\OnionArchitecture\OA.Data\obj\Debug\OA.Data.dll
+D:\OnionArchitecture\OnionArchitecture\OA.Data\obj\Debug\OA.Data.pdb
