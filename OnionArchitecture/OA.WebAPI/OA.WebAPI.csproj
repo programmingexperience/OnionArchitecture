@@ -97,6 +97,15 @@
       <HintPath>..\packages\Unity.AspNet.WebApi.4.0.1\lib\net45\Microsoft.Practices.Unity.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="OA.Data">
+      <HintPath>..\OA.Data\bin\Debug\OA.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OA.Repo">
+      <HintPath>..\OA.Repo\bin\Debug\OA.Repo.dll</HintPath>
+    </Reference>
+    <Reference Include="OA.Service">
+      <HintPath>..\OA.Service\bin\Debug\OA.Service.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />

@@ -1,8 +1,6 @@
+D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\OA.Repo.dll.config
 D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\OA.Repo.dll
 D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\OA.Repo.pdb
-D:\OnionArchitecture\OnionArchitecture\OA.Repo\obj\Debug\OA.Repo.dll
-D:\OnionArchitecture\OnionArchitecture\OA.Repo\obj\Debug\OA.Repo.pdb
-D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\OA.Repo.dll.config
 D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\EntityFramework.dll
 D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\EntityFramework.SqlServer.dll
 D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\OA.Data.dll
@@ -10,3 +8,5 @@ D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\EntityFramework.xml
 D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\EntityFramework.SqlServer.xml
 D:\OnionArchitecture\OnionArchitecture\OA.Repo\bin\Debug\OA.Data.pdb
 D:\OnionArchitecture\OnionArchitecture\OA.Repo\obj\Debug\OA.Repo.csprojResolveAssemblyReference.cache
+D:\OnionArchitecture\OnionArchitecture\OA.Repo\obj\Debug\OA.Repo.dll
+D:\OnionArchitecture\OnionArchitecture\OA.Repo\obj\Debug\OA.Repo.pdb

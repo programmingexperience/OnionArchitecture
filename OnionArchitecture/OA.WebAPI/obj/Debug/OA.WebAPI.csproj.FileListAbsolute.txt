@@ -1,3 +1,4 @@
+D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\obj\Debug\OA.WebAPI.csprojResolveAssemblyReference.cache
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\ApplicationInsights.config
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\roslyn\csc.exe
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -44,6 +45,9 @@ D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Practices.Unity.R
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Practices.Unity.WebApi.dll
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Web.Infrastructure.dll
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Newtonsoft.Json.dll
+D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\OA.Data.dll
+D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\OA.Repo.dll
+D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\OA.Service.dll
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Owin.dll
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\System.Net.Http.Formatting.dll
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\System.Web.Helpers.dll
@@ -70,6 +74,9 @@ D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Practices.Unity.x
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Practices.Unity.Configuration.xml
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Practices.Unity.WebApi.xml
+D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\OA.Data.pdb
+D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\OA.Repo.pdb
+D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\OA.Service.pdb
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Newtonsoft.Json.xml
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\System.Net.Http.Formatting.xml
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\System.Web.Helpers.xml
@@ -99,4 +106,3 @@ D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Owin.Security.Mic
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\System.Web.Http.Owin.xml
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\obj\Debug\OA.WebAPI.dll
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\obj\Debug\OA.WebAPI.pdb
-D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\obj\Debug\OA.WebAPI.csprojResolveAssemblyReference.cache
