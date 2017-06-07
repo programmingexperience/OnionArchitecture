@@ -1,0 +1,4 @@
+D:\OnionArchitecture\OnionArchitecture\OA.Service\bin\Debug\OA.Service.dll
+D:\OnionArchitecture\OnionArchitecture\OA.Service\bin\Debug\OA.Service.pdb
+D:\OnionArchitecture\OnionArchitecture\OA.Service\obj\Debug\OA.Service.dll
+D:\OnionArchitecture\OnionArchitecture\OA.Service\obj\Debug\OA.Service.pdb
