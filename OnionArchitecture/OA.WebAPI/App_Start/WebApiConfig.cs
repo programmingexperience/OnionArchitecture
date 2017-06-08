@@ -5,6 +5,11 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using Microsoft.Practices.Unity;
+using OA.Service.Interfaces;
+using OA.WebAPI.Resolver;
+using OA.Service.Services;
+using OA.Repo.UoW;
 
 namespace OA.WebAPI
 {
@@ -25,6 +30,15 @@ namespace OA.WebAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+
+            // Web API configuration and services
+            var container = new UnityContainer();
+            //container.RegisterType<IGenericRepository, GenericRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IGenericUoW, GenericUoW>(new HierarchicalLifetimeManager());
+            container.RegisterType<IUserSrvc, UserSrvc>(new HierarchicalLifetimeManager());
+            container.RegisterType<IOrderSrvc, OrderSrvc>(new HierarchicalLifetimeManager());
+            config.DependencyResolver = new UnityResolver(container);
         }
     }
 }

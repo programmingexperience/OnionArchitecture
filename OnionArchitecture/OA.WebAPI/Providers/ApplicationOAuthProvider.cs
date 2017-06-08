@@ -18,7 +18,6 @@ namespace OA.WebAPI.Providers
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly IUserSrvc _userService;
-        private readonly IGenericUoW _UoW2;
         private readonly string _publicClientId;
         public ApplicationOAuthProvider(string publicClientId)
         {
@@ -29,16 +28,16 @@ namespace OA.WebAPI.Providers
 
             _publicClientId = publicClientId;
 
-            IGenericUoW _UoW2 = new GenericUoW();
-            IUserSrvc userServiceParam = new UserSrvc(_UoW2);
+            IGenericUoW _UoW = new GenericUoW();
+            IUserSrvc userServiceParam = new UserSrvc(_UoW);
             this._userService = userServiceParam;
         }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+            #region Commented auto generated code
             //var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
             //ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
-
             //if (user == null)
             //{
             //    context.SetError("invalid_grant", "The user name or password is incorrect.");
@@ -54,6 +53,7 @@ namespace OA.WebAPI.Providers
             //AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             //context.Validated(ticket);
             //context.Request.Context.Authentication.SignIn(cookiesIdentity);
+            #endregion
 
             var allowedOrigin = context.OwinContext.Get<string>("as:clientAllowedOrigin");
             if (allowedOrigin == null) allowedOrigin = "*";
