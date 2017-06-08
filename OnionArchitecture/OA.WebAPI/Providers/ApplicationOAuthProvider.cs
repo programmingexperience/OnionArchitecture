@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using OA.WebAPI.Models;
+using OA.Service.Interfaces;
+using OA.Repo.UoW;
+using OA.Service.Services;
+using OA.Data.Model;
 
 namespace OA.WebAPI.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
+        private readonly IUserSrvc _userService;
+        private readonly IGenericUoW _UoW2;
         private readonly string _publicClientId;
-
         public ApplicationOAuthProvider(string publicClientId)
         {
             if (publicClientId == null)
@@ -25,29 +28,62 @@ namespace OA.WebAPI.Providers
             }
 
             _publicClientId = publicClientId;
+
+            IGenericUoW _UoW2 = new GenericUoW();
+            IUserSrvc userServiceParam = new UserSrvc(_UoW2);
+            this._userService = userServiceParam;
         }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
+            //var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
+            //ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
-            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            //if (user == null)
+            //{
+            //    context.SetError("invalid_grant", "The user name or password is incorrect.");
+            //    return;
+            //}
 
-            if (user == null)
+            //ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
+            //   OAuthDefaults.AuthenticationType);
+            //ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
+            //    CookieAuthenticationDefaults.AuthenticationType);
+
+            //AuthenticationProperties properties = CreateProperties(user.UserName);
+            //AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
+            //context.Validated(ticket);
+            //context.Request.Context.Authentication.SignIn(cookiesIdentity);
+
+            var allowedOrigin = context.OwinContext.Get<string>("as:clientAllowedOrigin");
+            if (allowedOrigin == null) allowedOrigin = "*";
+            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { allowedOrigin });
+            User user = _userService.ValidateUser(context.UserName, context.Password);
+            if (user.Id == 0 || user == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
-                return;
             }
-
-            ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
-               OAuthDefaults.AuthenticationType);
-            ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
-                CookieAuthenticationDefaults.AuthenticationType);
-
-            AuthenticationProperties properties = CreateProperties(user.UserName);
-            AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
-            context.Validated(ticket);
-            context.Request.Context.Authentication.SignIn(cookiesIdentity);
+            else
+            {
+                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
+                identity.AddClaim(new Claim(ClaimTypes.Role, "user"));
+                identity.AddClaim(new Claim("sub", context.UserName));
+                var props = new AuthenticationProperties(new Dictionary<string, string>
+                    {
+                       {
+                           "UserName", user.FirstName.ToString()
+                       },
+                       {
+                           "UserId",user.Id.ToString()
+                       },
+                       {
+                           "IsForgotPSWD",user.IsForgotPSWD.ToString()
+                       },
+                    });
+                var ticket = new AuthenticationTicket(identity, props);
+                context.Validated(ticket);
+            }
         }
 
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)
