@@ -6,10 +6,10 @@ namespace OA.Service.Services
 {
     public class OrderSrvc : IOrderSrvc
     {
-        private readonly IGenericUoW _UoW2;
-        public OrderSrvc(IGenericUoW UoW2)
+        private readonly IGenericUoW _UoW;
+        public OrderSrvc(IGenericUoW UoW)
         {
-            _UoW2 = UoW2;
+            _UoW = UoW;
         }
         /// <summary>
         /// 
@@ -18,7 +18,7 @@ namespace OA.Service.Services
         /// <returns></returns>
         public void InsertOrder(Order order)
         {
-            _UoW2.GenericRepository<Order>().Insert(order);
+            _UoW.GenericRepository<Order>().Insert(order);
         }
     }
 }
