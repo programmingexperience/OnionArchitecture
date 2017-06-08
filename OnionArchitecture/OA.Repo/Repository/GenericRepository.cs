@@ -18,7 +18,7 @@ namespace OA.Repo.Repository
         public GenericRepository(OnionArchitectureEntities context)
         {
             this.context = context;
-            this.dbSet = context.Set<T>();
+            dbSet = context.Set<T>();
         }
 
         /// <summary>
