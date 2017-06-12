@@ -1,5 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="OnionArchitectureModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="RequestIpAddress" Type="varchar" MaxLength="50" />
+    <Property Name="RequestUri" Type="varchar" MaxLength="500" />
+    <Property Name="RequestMethod" Type="varchar" MaxLength="10" />
+    <Property Name="RequestPostData" Type="nvarchar(max)" />
+    <Property Name="RequestTimestamp" Type="datetime" />
+    <Property Name="ResponseStatusCode" Type="varchar" MaxLength="10" />
+    <Property Name="ResponseReasonPhrase" Type="nvarchar(max)" />
+    <Property Name="ResponseErrorMessage" Type="nvarchar(max)" />
+    <Property Name="ResponseTimestamp" Type="datetime" />
+  </EntityType>
   <EntityType Name="Order">
     <Key>
       <PropertyRef Name="Id" />
@@ -61,6 +77,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="OnionArchitectureModelStoreContainer">
+    <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />

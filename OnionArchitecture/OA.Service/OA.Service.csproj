@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Interfaces\IOrderSrvc.cs" />
     <Compile Include="Interfaces\IUserSrvc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
