@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Net;
 using System.Web.Http.Filters;
 using System.Web.Http.Controllers;
+using OA.Service.Interfaces;
 
 namespace OA.WebAPI.ActionFilters
 {
@@ -12,10 +13,14 @@ namespace OA.WebAPI.ActionFilters
     {
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
+
             if (!actionContext.ModelState.IsValid)
                 actionContext.Response = actionContext.Request.CreateErrorResponse(HttpStatusCode.BadRequest, actionContext.ModelState);
         }
     }
+    /// <summary>
+    /// 
+    /// </summary>
     public class UnhandledExceptionFilter : ExceptionFilterAttribute
     {
         public override void OnException(HttpActionExecutedContext context)
