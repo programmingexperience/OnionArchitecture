@@ -7,3 +7,4 @@ D:\OnionArchitecture\OnionArchitecture\OA.Data\bin\Debug\EntityFramework.xml
 D:\OnionArchitecture\OnionArchitecture\OA.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\OnionArchitecture\OnionArchitecture\OA.Data\obj\Debug\OA.Data.dll
 D:\OnionArchitecture\OnionArchitecture\OA.Data\obj\Debug\OA.Data.pdb
+D:\OnionArchitecture\OnionArchitecture\OA.Data\obj\Debug\OA.Data.csprojResolveAssemblyReference.cache
