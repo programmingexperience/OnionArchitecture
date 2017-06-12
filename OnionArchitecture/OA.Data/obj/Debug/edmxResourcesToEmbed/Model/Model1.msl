@@ -40,5 +40,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="OnionArchitectureModel.Log">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="ResponseTimestamp" ColumnName="ResponseTimestamp" />
+          <ScalarProperty Name="ResponseErrorMessage" ColumnName="ResponseErrorMessage" />
+          <ScalarProperty Name="ResponseReasonPhrase" ColumnName="ResponseReasonPhrase" />
+          <ScalarProperty Name="ResponseStatusCode" ColumnName="ResponseStatusCode" />
+          <ScalarProperty Name="RequestTimestamp" ColumnName="RequestTimestamp" />
+          <ScalarProperty Name="RequestPostData" ColumnName="RequestPostData" />
+          <ScalarProperty Name="RequestMethod" ColumnName="RequestMethod" />
+          <ScalarProperty Name="RequestUri" ColumnName="RequestUri" />
+          <ScalarProperty Name="RequestIpAddress" ColumnName="RequestIpAddress" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

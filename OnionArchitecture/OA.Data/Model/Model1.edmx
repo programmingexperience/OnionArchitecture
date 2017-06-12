@@ -4,7 +4,23 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OnionArchitectureModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="OnionArchitectureModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="bigint" />
+          <Property Name="RequestIpAddress" Type="varchar" MaxLength="50" />
+          <Property Name="RequestUri" Type="varchar" MaxLength="500" />
+          <Property Name="RequestMethod" Type="varchar" MaxLength="10" />
+          <Property Name="RequestPostData" Type="nvarchar(max)" />
+          <Property Name="RequestTimestamp" Type="datetime" />
+          <Property Name="ResponseStatusCode" Type="varchar" MaxLength="10" />
+          <Property Name="ResponseReasonPhrase" Type="nvarchar(max)" />
+          <Property Name="ResponseErrorMessage" Type="nvarchar(max)" />
+          <Property Name="ResponseTimestamp" Type="datetime" />
+        </EntityType>
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Id" />
@@ -66,6 +82,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="OnionArchitectureModelStoreContainer">
+          <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -78,8 +95,7 @@
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OnionArchitectureModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -159,7 +175,24 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
+          <EntitySet Name="Logs" EntityType="OnionArchitectureModel.Log" />
         </EntityContainer>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int64" />
+          <Property Name="RequestIpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RequestUri" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="RequestMethod" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RequestPostData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RequestTimestamp" Type="DateTime" Precision="3" />
+          <Property Name="ResponseStatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ResponseReasonPhrase" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResponseErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResponseTimestamp" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -202,6 +235,23 @@
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="IsForgotPSWD" ColumnName="IsForgotPSWD" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="OnionArchitectureModel.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="ResponseTimestamp" ColumnName="ResponseTimestamp" />
+                <ScalarProperty Name="ResponseErrorMessage" ColumnName="ResponseErrorMessage" />
+                <ScalarProperty Name="ResponseReasonPhrase" ColumnName="ResponseReasonPhrase" />
+                <ScalarProperty Name="ResponseStatusCode" ColumnName="ResponseStatusCode" />
+                <ScalarProperty Name="RequestTimestamp" ColumnName="RequestTimestamp" />
+                <ScalarProperty Name="RequestPostData" ColumnName="RequestPostData" />
+                <ScalarProperty Name="RequestMethod" ColumnName="RequestMethod" />
+                <ScalarProperty Name="RequestUri" ColumnName="RequestUri" />
+                <ScalarProperty Name="RequestIpAddress" ColumnName="RequestIpAddress" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

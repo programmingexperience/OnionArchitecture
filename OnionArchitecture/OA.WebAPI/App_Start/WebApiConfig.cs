@@ -10,6 +10,7 @@ using OA.Service.Interfaces;
 using OA.WebAPI.Resolver;
 using OA.Service.Services;
 using OA.Repo.UoW;
+using OA.WebAPI.Handlers;
 
 namespace OA.WebAPI
 {
@@ -31,6 +32,8 @@ namespace OA.WebAPI
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            // Handler for request and response logging. 
+            config.MessageHandlers.Add(new LogRequestAndResponseHandler());
 
             // Web API configuration and services
             var container = new UnityContainer();

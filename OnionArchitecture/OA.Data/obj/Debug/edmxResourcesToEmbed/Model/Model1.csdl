@@ -76,5 +76,22 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Order" EntitySet="Orders" />
     </AssociationSet>
+    <EntitySet Name="Logs" EntityType="OnionArchitectureModel.Log" />
   </EntityContainer>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="RequestIpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RequestUri" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="RequestMethod" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RequestPostData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequestTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="ResponseStatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ResponseReasonPhrase" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ResponseErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ResponseTimestamp" Type="DateTime" Precision="3" />
+  </EntityType>
 </Schema>

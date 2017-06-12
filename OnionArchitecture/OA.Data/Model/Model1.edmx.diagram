@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="OnionArchitectureModel.User" Width="1.5" PointX="1.625" PointY="3.5" IsExpanded="true" />
         <AssociationConnector Association="OnionArchitectureModel.FK_Order_Product" ManuallyRouted="false" />
         <AssociationConnector Association="OnionArchitectureModel.FK_Order_Users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OnionArchitectureModel.Log" Width="1.5" PointX="4.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
