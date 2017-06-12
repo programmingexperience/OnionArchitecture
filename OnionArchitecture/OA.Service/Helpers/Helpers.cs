@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace OA.Service.Helpers
 {
-    public class Helper
+    public class Helpers
     {
         /// <summary>
         /// 

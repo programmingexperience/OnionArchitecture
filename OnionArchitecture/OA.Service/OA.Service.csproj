@@ -55,19 +55,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Enumerations\Enumerations.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Interfaces\ILoggerSrvc.cs" />
     <Compile Include="Interfaces\IOrderSrvc.cs" />
+    <Compile Include="Interfaces\ISoftDeletable.cs" />
     <Compile Include="Interfaces\IUserSrvc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LoggerSrvc.cs" />
     <Compile Include="Services\OrderSrvc.cs" />
     <Compile Include="Services\UserSrvc.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enumerations\" />
-    <Folder Include="Extensions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
