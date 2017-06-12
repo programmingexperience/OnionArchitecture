@@ -44,10 +44,10 @@ namespace OA.WebAPI.Handlers
             var log = new Log
             {
                 UserId = 1,
-                RequestIpAddress = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? Helper.GetIpAddress(),
+                RequestIpAddress = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? Helpers.GetIpAddress(),
                 RequestUri = request.RequestUri.ToString(),
                 RequestMethod = request.Method.Method,
-                RequestPostData = Helper.Encrypt(requestBody),
+                RequestPostData = Helpers.Encrypt(requestBody),
                 RequestTimestamp = DateTime.Now
             };
             // let other handlers process the request
