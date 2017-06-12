@@ -119,6 +119,5 @@ namespace OA.Service.Helpers
             }
             return localIp;
         }
-
     }
 }

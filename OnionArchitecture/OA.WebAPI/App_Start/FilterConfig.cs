@@ -12,8 +12,8 @@ namespace OA.WebAPI
             filters.Add(new HandleErrorAttribute());
 
             // Custom action filter
-            filters.Add(new ModelStateFilter());
-            filters.Add(new UnhandledExceptionFilter());
+            //filters.Add(new ModelStateFilter());
+            //filters.Add(new UnhandledExceptionFilter());
         }
     }
 }
