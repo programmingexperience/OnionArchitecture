@@ -44,3 +44,15 @@ The layer holds interfaces which are used to communicate between the UI layer an
 
 UI Layer - 
 It’s the most external layer. It could be the Web Application, Web API or Unit Test project. This layer has an implementation of the Dependency Inversion Principle so that application builds a loosely coupled application. It communicates to internal layer via interfaces
+
+
+
+Please drop an email on (programming.experience@gmail.com) if anyone have any question/comments on my programming experience.  
+
+-- 
+Sincerely,
+
+Sagar  Parida 
+Software Developer/Programmer
+
+
