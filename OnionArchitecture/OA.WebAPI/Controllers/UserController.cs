@@ -1,4 +1,5 @@
 ﻿using OA.Data.Model;
+using OA.Service.Helpers;
 using OA.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,6 @@ namespace OA.WebAPI.Controllers
             }
             return Ok(result);
         }
-
         [Route("api/AddUser")]
         [HttpPost]
         public IHttpActionResult AddUser()
@@ -50,14 +50,14 @@ namespace OA.WebAPI.Controllers
             var user = new User()
             {
                 Title = "Mr.",
-                FirstName = "Sagar",
-                LastName = "Parida",
-                Role = "Admin",
-                Mobile = "918742957601",
-                Email = "sagar.chini@gmail.com",
-                PasswordHash = "password123$",
+                FirstName = "Zulia",
+                LastName = "Robert",
+                Role = "Customer",
+                Mobile = "919742957601",
+                Email = "zulia.robert@gmail.com",
+                PasswordHash = "xyz12345678$",
                 SecurityStamp = Guid.NewGuid().ToString(),
-                IPAddress = "172.20.20.177",
+                IPAddress = Helpers.GetIpAddress(),
                 CreatedBy = 1,
                 CreatedDate = DateTime.Now,
                 ModifiedBy = 1,
@@ -68,7 +68,7 @@ namespace OA.WebAPI.Controllers
             var order = new Order()
             {
                 UserId = 0,
-                ProductId = 1001
+                ProductId = 1
             };
             #endregion
 

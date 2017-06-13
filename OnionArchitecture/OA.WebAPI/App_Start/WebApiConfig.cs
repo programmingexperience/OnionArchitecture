@@ -26,18 +26,17 @@ namespace OA.WebAPI
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            // Handler for request and response logging. 
-            //config.MessageHandlers.Add(new LogRequestAndResponseHandler());
-
+            // Validate application model state 
             config.Filters.Add(new ModelStateFilter());
+            // Filter all un handeled exception throughout the application. 
             config.Filters.Add(new UnhandledExceptionFilter());
+            // Handler for request and response logging. 
             config.MessageHandlers.Add(new LogRequestAndResponseHandler());
 
 
