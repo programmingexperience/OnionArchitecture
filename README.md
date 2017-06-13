@@ -1,3 +1,8 @@
+Hi,
+
+Here I am developing a Web API 2 using c# based on #Onion Architecture with generic repository,unit of work and centralized exception logging system. It helps not only to a developer but also it helps to a IT organizastion to design and develop a #API based on merden architecture and reduced the entire development time and delivered a successful product to there client/customers. 
+
+
 # OnionArchitecture
 
 Why Onion Architecture - 
