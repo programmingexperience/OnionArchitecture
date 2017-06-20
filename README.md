@@ -1,6 +1,6 @@
 Hi,
 
-Here I am developing a Token based Web API 2 using c# based on Onion Architecture with generic repository,unit of work and centralized exception logging system. It helps not only to a developer but also it helps to all IT organizastion to design and develop a API based on merden architecture and reduced the entire development time and delivered a successful product to there client/customers. 
+Here I am developing a Token based Web API 2 using c# based on Onion Architecture with generic repository,unit of work and centralized exception logging system. It will helps not only a .NET developer but also it helps to all IT organizastion to design and develop a API based on merden architecture and reduced the entire development time and delivered a successful product to there client/customers. 
 
 
 # OnionArchitecture
@@ -31,7 +31,7 @@ It has four layers.
 1. Domain Entities Layer
 2. Repository Layer
 3. Service Layer
-4. UI (Web/Unit Test) Layer
+4. UI (Web Application/ Web API/ Unit Test Project) Layer
 
 Domain Entities Layer - 
 It is the center part of the architecture. It holds all application domain objects. If an application is developed with ORM entity framework, then this layer holds POCO classes (Code First) or Edmx (Database First) with entities. These domain entities don't have any dependencies.
