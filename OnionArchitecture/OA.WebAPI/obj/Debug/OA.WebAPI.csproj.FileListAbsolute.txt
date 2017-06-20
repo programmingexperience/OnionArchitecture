@@ -106,3 +106,5 @@ D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\Microsoft.Owin.Security.Mic
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\System.Web.Http.Owin.xml
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\obj\Debug\OA.WebAPI.dll
 D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\obj\Debug\OA.WebAPI.pdb
+D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\OA.WebAPI.dll.CodeAnalysisLog.xml
+D:\OnionArchitecture\OnionArchitecture\OA.WebAPI\bin\OA.WebAPI.dll.lastcodeanalysissucceeded

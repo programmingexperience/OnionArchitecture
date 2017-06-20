@@ -1,0 +1,203 @@
+
+/****** Object:  Database [OnionArchitecture]    Script Date: 6/20/2017 5:17:04 PM ******/
+CREATE DATABASE [OnionArchitecture]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'OnionArchitecture', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\OnionArchitecture.mdf' , SIZE = 4096KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'OnionArchitecture_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\OnionArchitecture_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [OnionArchitecture] SET COMPATIBILITY_LEVEL = 120
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [OnionArchitecture].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [OnionArchitecture] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [OnionArchitecture] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [OnionArchitecture] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [OnionArchitecture] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [OnionArchitecture] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [OnionArchitecture] SET  MULTI_USER 
+GO
+ALTER DATABASE [OnionArchitecture] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [OnionArchitecture] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [OnionArchitecture] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [OnionArchitecture] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+ALTER DATABASE [OnionArchitecture] SET DELAYED_DURABILITY = DISABLED 
+GO
+USE [OnionArchitecture]
+GO
+/****** Object:  Table [dbo].[Log]    Script Date: 6/20/2017 5:17:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Log](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[UserId] [bigint] NULL,
+	[RequestIpAddress] [varchar](50) NULL,
+	[RequestUri] [varchar](500) NULL,
+	[RequestMethod] [varchar](10) NULL,
+	[RequestPostData] [nvarchar](max) NULL,
+	[RequestTimestamp] [datetime] NULL,
+	[ResponseStatusCode] [varchar](10) NULL,
+	[ResponseReasonPhrase] [nvarchar](max) NULL,
+	[ResponseErrorMessage] [nvarchar](max) NULL,
+	[ResponseTimestamp] [datetime] NULL,
+ CONSTRAINT [PK_Log] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Order]    Script Date: 6/20/2017 5:17:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Order](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[UserId] [bigint] NOT NULL,
+	[ProductId] [bigint] NOT NULL,
+ CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Product]    Script Date: 6/20/2017 5:17:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Product](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](250) NOT NULL,
+ CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 6/20/2017 5:17:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Users](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Title] [char](3) NOT NULL,
+	[FirstName] [varchar](150) NOT NULL,
+	[LastName] [varchar](150) NOT NULL,
+	[Role] [varchar](50) NOT NULL,
+	[Mobile] [varchar](15) NOT NULL,
+	[Email] [varchar](150) NOT NULL,
+	[PasswordHash] [varchar](max) NOT NULL,
+	[SecurityStamp] [varchar](max) NOT NULL,
+	[IPAddress] [varchar](50) NOT NULL,
+	[CreatedBy] [bigint] NOT NULL,
+	[CreatedDate] [datetime] NOT NULL,
+	[ModifiedBy] [bigint] NULL,
+	[ModifiedDate] [datetime] NULL,
+	[IsForgotPSWD] [bit] NOT NULL CONSTRAINT [DF_Users_IsForgotPSWD]  DEFAULT ((0)),
+	[IsDeleted] [bit] NOT NULL CONSTRAINT [DF_Users_IsDeleted]  DEFAULT ((0)),
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[Log] ON 
+
+GO
+INSERT [dbo].[Log] ([Id], [UserId], [RequestIpAddress], [RequestUri], [RequestMethod], [RequestPostData], [RequestTimestamp], [ResponseStatusCode], [ResponseReasonPhrase], [ResponseErrorMessage], [ResponseTimestamp]) VALUES (1, 1, N'172.20.20.177', N'http://localhost:59598/api/GetAllUser', N'GET', N'9XpSdCkLjaQg24KhEgayGg==', CAST(N'2017-06-13 21:51:06.920' AS DateTime), N'200', N'OK', NULL, CAST(N'2017-06-13 21:52:27.673' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[Log] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Product] ON 
+
+GO
+INSERT [dbo].[Product] ([Id], [Name]) VALUES (1, N'Umbrella')
+GO
+SET IDENTITY_INSERT [dbo].[Product] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Users] ON 
+
+GO
+INSERT [dbo].[Users] ([Id], [Title], [FirstName], [LastName], [Role], [Mobile], [Email], [PasswordHash], [SecurityStamp], [IPAddress], [CreatedBy], [CreatedDate], [ModifiedBy], [ModifiedDate], [IsForgotPSWD], [IsDeleted]) VALUES (1, N'Mr.', N'Sagar', N'Parida', N'Admin', N'919821730298', N'programming.experience@gmail.com', N'pegit007@@', N'5efb87c2-79ff-419b-8531-e860cec2362d', N'175.12.12.170', 1, CAST(N'2017-06-06 17:20:11.267' AS DateTime), 1, CAST(N'2017-06-06 17:20:11.267' AS DateTime), 0, 0)
+GO
+SET IDENTITY_INSERT [dbo].[Users] OFF
+GO
+ALTER TABLE [dbo].[Order]  WITH CHECK ADD  CONSTRAINT [FK_Order_Product] FOREIGN KEY([ProductId])
+REFERENCES [dbo].[Product] ([Id])
+GO
+ALTER TABLE [dbo].[Order] CHECK CONSTRAINT [FK_Order_Product]
+GO
+ALTER TABLE [dbo].[Order]  WITH CHECK ADD  CONSTRAINT [FK_Order_Users] FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[Order] CHECK CONSTRAINT [FK_Order_Users]
+GO
