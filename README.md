@@ -46,6 +46,10 @@ UI Layer -
 It’s the most external layer. It could be the Web Application, Web API or Unit Test project. This layer has an implementation of the Dependency Inversion Principle so that application builds a loosely coupled application. It communicates to internal layer via interfaces
 
 
+Development Procedure - 
+1. Run database script from OA.WebAPI/App_Data folder
+2. Update connectionstring.
+3. Build the entire application and start debugging from OA.WebAPI using POSTMAN.
 
 
 Please drop an email on (programming.experience@gmail.com) if anyone have any question/comments on my programming experience.  
