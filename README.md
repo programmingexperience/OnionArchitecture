@@ -1,6 +1,6 @@
 Hi,
 
-Here I am developing a Token based Web API 2 using c# based on Onion Architecture with generic repository,unit of work and centralized exception logging system. It will helps not only a .NET developer but also it helps to all IT organizastion to design and develop a API based on merden architecture and reduced the entire development time and delivered a successful product to there client/customers. 
+Here I am developing a Token based Web API 2 using c# based on Onion Architecture with generic repository, unit of work and centralized exception logging system. It will help not only. NET developer but also it helps to all IT organizations to design and develop an API based on modern architecture and reduced the entire development time and delivered a successful product to their client/customers.
 
 
 # OnionArchitecture
